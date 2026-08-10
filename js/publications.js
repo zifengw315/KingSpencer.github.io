@@ -4,10 +4,12 @@ const publications = [
     title: "Budget-Aware Tool-Use Enables Effective Agent Scaling",
     authors: "Tengxiao Liu, Zifeng Wang, Jin Miao, I Hsu, Jun Yan, Jiefeng Chen, Rujun Han, Fangyuan Xu, Yanfei Chen, Ke Jiang, Samira Daruki, Yi Liang, William Yang Wang, Tomas Pfister, Chen-Yu Lee",
     venue: {
-      fullName: "arXiv",
-      year: 2025
+      fullName: "Conference on Language Modeling",
+      abbreviation: "COLM",
+      year: 2026
     },
     paperLink: "https://arxiv.org/abs/2511.17006",
+    codeLink: "https://github.com/google-research/budget-aware-agent",
     image: "paper_images/bats.png",
     tags: ["llm"],
     description: "We introduce Budget Tracker and BATS (Budget Aware Test-time Scaling) to enable effective scaling of tool-augmented agents under explicit budgets, showing that budget-awareness produce more favorable scaling curves and push the cost-performance Pareto frontier.",
