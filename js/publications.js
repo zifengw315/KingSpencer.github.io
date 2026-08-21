@@ -1,6 +1,20 @@
 // Publications data
 const publications = [
   {
+    title: "EnvHarness: Awakening Static Worlds for Agent Learning",
+    authors: "Chengsong Huang, Zifeng Wang, Rujun Han, Jun Yan, Yanfei Chen, Zoey CuiZhu, Ke Jiang, Peng Xia, Han Yu, Yufan Zhuang, Yifei Ming, Jiaqi Pan, Bhavana Dalvi Mishra, Jiaxin Huang, Burak Gokturk, Tomas Pfister, Chen-Yu Lee",
+    venue: {
+      fullName: "arXiv",
+      year: 2026
+    },
+    paperLink: "https://arxiv.org/abs/2608.19880",
+    codeLink: "https://github.com/google-research/envharness",
+    websiteLink: "https://envharness.com/",
+    image: "paper_images/envharness.png",
+    tags: ["llm"],
+    description: "We introduce EnvHarness, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic while retaining its original verifier. To automate this, EnvRigger observes a target policy's execution trajectories to synthesize harness components targeting its diagnosed flaws. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment-generation pipelines, achieving up to a 9.0-point gain on held-out instances with 9.8% fewer execution steps, and provides a superior optimization signal for reinforcement learning."
+  },
+  {
     title: "Budget-Aware Tool-Use Enables Effective Agent Scaling",
     authors: "Tengxiao Liu, Zifeng Wang, Jin Miao, I Hsu, Jun Yan, Jiefeng Chen, Rujun Han, Fangyuan Xu, Yanfei Chen, Ke Jiang, Samira Daruki, Yi Liang, William Yang Wang, Tomas Pfister, Chen-Yu Lee",
     venue: {
@@ -379,6 +393,7 @@ function createPublicationHTML(pub) {
         <br>
         [<a href="${pub.paperLink}">Paper</a>]
         ${pub.codeLink ? `[<a href="${pub.codeLink}">Code</a>]` : ''}
+        ${pub.websiteLink ? `[<a href="${pub.websiteLink}">Website</a>]` : ''}
         ${pub.blogLink ? `[<a href="${pub.blogLink}">Blog</a>]` : ''}
         ${pub.ventureBeatLink ? `[<a href="${pub.ventureBeatLink}" style="color: #ff6b35; font-weight: bold;">VentureBeat</a>]` : ''}
         <br>
