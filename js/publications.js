@@ -15,6 +15,20 @@ const publications = [
     description: "We introduce EnvHarness, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic while retaining its original verifier. To automate this, EnvRigger observes a target policy's execution trajectories to synthesize harness components targeting its diagnosed flaws. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment-generation pipelines, achieving up to a 9.0-point gain on held-out instances with 9.8% fewer execution steps, and provides a superior optimization signal for reinforcement learning."
   },
   {
+    title: "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+    authors: "Peng Xia, Rujun Han, Zifeng Wang, Yanfei Chen, Yufan Zhuang, Yoonho Lee, Chengsong Huang, Han Yu, Zhongying CuiZhu, Yifei Ming, Huaxiu Yao, Burak Gokturk, Tomas Pfister, Chen-Yu Lee",
+    venue: {
+      fullName: "arXiv",
+      year: 2026
+    },
+    paperLink: "https://arxiv.org/abs/2609.24972",
+    codeLink: "https://github.com/google-research/rrsi",
+    websiteLink: "https://regularized-rsi.com/",
+    image: "paper_images/rrsi.png",
+    tags: ["llm"],
+    description: "RRSI brings regularization to the recursive self-improvement of agent harnesses (prompts, control flow, tools, memory, and context management), which otherwise tends to overfit to the tasks it evolves against. The proposer works under a temporally annealed edit budget and is steered toward unexplored trajectories, while the selector uses a critic to screen benchmark-specific proposals and a pruner to drop changes that are too small, too costly, or no longer useful. Across eight benchmarks spanning coding, agentic workspace, and engineering design tasks, RRSI gains up to 14.1 points in-distribution and up to 4.7 points on five out-of-distribution benchmarks, with 30% fewer policy tokens than unregularized evolution."
+  },
+  {
     title: "SkillOS: Learning Skill Curation for Self-Evolving Agents",
     authors: "Siru Ouyang, Jun Yan, Yanfei Chen, Rujun Han, Zifeng Wang, Bhavana Dalvi Mishra, Rui Meng, Chun-Liang Li, Yizhu Jiao, Kaiwen Zha, Maohao Shen, Vishy Tirumalashetty, George Lee, Jiawei Han, Tomas Pfister, Chen-Yu Lee",
     venue: {
