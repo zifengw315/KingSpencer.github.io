@@ -15,6 +15,19 @@ const publications = [
     description: "We introduce EnvHarness, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic while retaining its original verifier. To automate this, EnvRigger observes a target policy's execution trajectories to synthesize harness components targeting its diagnosed flaws. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment-generation pipelines, achieving up to a 9.0-point gain on held-out instances with 9.8% fewer execution steps, and provides a superior optimization signal for reinforcement learning."
   },
   {
+    title: "SkillOS: Learning Skill Curation for Self-Evolving Agents",
+    authors: "Siru Ouyang, Jun Yan, Yanfei Chen, Rujun Han, Zifeng Wang, Bhavana Dalvi Mishra, Rui Meng, Chun-Liang Li, Yizhu Jiao, Kaiwen Zha, Maohao Shen, Vishy Tirumalashetty, George Lee, Jiawei Han, Tomas Pfister, Chen-Yu Lee",
+    venue: {
+      fullName: "Neural Information Processing Systems",
+      abbreviation: "NeurIPS",
+      year: 2026
+    },
+    paperLink: "https://arxiv.org/abs/2605.06614",
+    image: "paper_images/skillos.png",
+    tags: ["llm"],
+    description: "SkillOS is an experience-driven RL recipe for learning skill curation in self-evolving agents. A frozen executor retrieves and applies skills, while a trainable skill curator updates an external SkillRepo from accumulated experience, trained with composite rewards on grouped task streams where later related tasks evaluate earlier skill updates. SkillOS outperforms memory-free and memory-based baselines on multi-turn agentic and single-turn reasoning tasks, and the learned curator generalizes across executor backbones and task domains."
+  },
+  {
     title: "Budget-Aware Tool-Use Enables Effective Agent Scaling",
     authors: "Tengxiao Liu, Zifeng Wang, Jin Miao, I Hsu, Jun Yan, Jiefeng Chen, Rujun Han, Fangyuan Xu, Yanfei Chen, Ke Jiang, Samira Daruki, Yi Liang, William Yang Wang, Tomas Pfister, Chen-Yu Lee",
     venue: {
