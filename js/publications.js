@@ -10,6 +10,9 @@ const publications = [
     paperLink: "https://arxiv.org/abs/2608.19880",
     codeLink: "https://github.com/google-research/envharness",
     websiteLink: "https://envharness.com/",
+    talkLink: "https://research.google/conferences-and-events/google-at-colm-2026/",
+    talkLabel: "COLM'26 Talk",
+    ventureBeatLink: "https://venturebeat.com/orchestration/googles-open-source-envharness-lets-ai-agents-train-against-environments-that-evolve-with-them",
     image: "paper_images/envharness.png",
     tags: ["llm"],
     description: "We introduce EnvHarness, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic while retaining its original verifier. To automate this, EnvRigger observes a target policy's execution trajectories to synthesize harness components targeting its diagnosed flaws. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment-generation pipelines, achieving up to a 9.0-point gain on held-out instances with 9.8% fewer execution steps, and provides a superior optimization signal for reinforcement learning."
@@ -65,6 +68,7 @@ const publications = [
       year: 2026
     },
     paperLink: "https://arxiv.org/abs/2509.25140",
+    codeLink: "https://github.com/google-research/reasoning-bank",
     image: "paper_images/rb.png",
     tags: ["llm"],
     description: "ReasoningBank is a memory framework that enables LLM agents to learn from accumulated experience by distilling generalizable reasoning strategies from both successful and failed interactions. Rather than storing raw trajectories, it allows agents to self-curate insights for future tasks. The framework introduces Memory-Aware Test-Time Scaling (MaTTS), which creates synergy between memory and scaling—relevant memories guide exploration while scaling generates diverse experiences that improve memory quality.",
@@ -422,6 +426,7 @@ function createPublicationHTML(pub) {
         ${pub.codeLink ? `[<a href="${pub.codeLink}">Code</a>]` : ''}
         ${pub.websiteLink ? `[<a href="${pub.websiteLink}">Website</a>]` : ''}
         ${pub.blogLink ? `[<a href="${pub.blogLink}">Blog</a>]` : ''}
+        ${pub.talkLink ? `[<a href="${pub.talkLink}">${pub.talkLabel || 'Talk'}</a>]` : ''}
         ${pub.ventureBeatLink ? `[<a href="${pub.ventureBeatLink}" style="color: #ff6b35; font-weight: bold;">VentureBeat</a>]` : ''}
         <br>
         <p></p>
