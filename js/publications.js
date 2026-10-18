@@ -68,6 +68,7 @@ const publications = [
       year: 2026
     },
     paperLink: "https://arxiv.org/abs/2509.25140",
+    codeLink: "https://github.com/google-research/reasoning-bank",
     image: "paper_images/rb.png",
     tags: ["llm"],
     description: "ReasoningBank is a memory framework that enables LLM agents to learn from accumulated experience by distilling generalizable reasoning strategies from both successful and failed interactions. Rather than storing raw trajectories, it allows agents to self-curate insights for future tasks. The framework introduces Memory-Aware Test-Time Scaling (MaTTS), which creates synergy between memory and scaling—relevant memories guide exploration while scaling generates diverse experiences that improve memory quality.",
