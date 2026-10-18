@@ -10,6 +10,9 @@ const publications = [
     paperLink: "https://arxiv.org/abs/2608.19880",
     codeLink: "https://github.com/google-research/envharness",
     websiteLink: "https://envharness.com/",
+    talkLink: "https://research.google/conferences-and-events/google-at-colm-2026/",
+    talkLabel: "COLM'26 Talk",
+    ventureBeatLink: "https://venturebeat.com/orchestration/googles-open-source-envharness-lets-ai-agents-train-against-environments-that-evolve-with-them",
     image: "paper_images/envharness.png",
     tags: ["llm"],
     description: "We introduce EnvHarness, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic while retaining its original verifier. To automate this, EnvRigger observes a target policy's execution trajectories to synthesize harness components targeting its diagnosed flaws. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment-generation pipelines, achieving up to a 9.0-point gain on held-out instances with 9.8% fewer execution steps, and provides a superior optimization signal for reinforcement learning."
@@ -422,6 +425,7 @@ function createPublicationHTML(pub) {
         ${pub.codeLink ? `[<a href="${pub.codeLink}">Code</a>]` : ''}
         ${pub.websiteLink ? `[<a href="${pub.websiteLink}">Website</a>]` : ''}
         ${pub.blogLink ? `[<a href="${pub.blogLink}">Blog</a>]` : ''}
+        ${pub.talkLink ? `[<a href="${pub.talkLink}">${pub.talkLabel || 'Talk'}</a>]` : ''}
         ${pub.ventureBeatLink ? `[<a href="${pub.ventureBeatLink}" style="color: #ff6b35; font-weight: bold;">VentureBeat</a>]` : ''}
         <br>
         <p></p>
