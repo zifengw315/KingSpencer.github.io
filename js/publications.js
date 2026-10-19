@@ -14,6 +14,7 @@ const publications = [
     talkLabel: "COLM'26 Talk",
     ventureBeatLink: "https://venturebeat.com/orchestration/googles-open-source-envharness-lets-ai-agents-train-against-environments-that-evolve-with-them",
     image: "paper_images/envharness.png",
+    featured: true,
     tags: ["llm"],
     description: "We introduce EnvHarness, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic while retaining its original verifier. To automate this, EnvRigger observes a target policy's execution trajectories to synthesize harness components targeting its diagnosed flaws. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment-generation pipelines, achieving up to a 9.0-point gain on held-out instances with 9.8% fewer execution steps, and provides a superior optimization signal for reinforcement learning."
   },
@@ -55,6 +56,7 @@ const publications = [
     paperLink: "https://arxiv.org/abs/2511.17006",
     codeLink: "https://github.com/google-research/budget-aware-agent",
     image: "paper_images/bats.png",
+    featured: true,
     tags: ["llm"],
     description: "We introduce Budget Tracker and BATS (Budget Aware Test-time Scaling) to enable effective scaling of tool-augmented agents under explicit budgets, showing that budget-awareness produce more favorable scaling curves and push the cost-performance Pareto frontier.",
     ventureBeatLink: "https://venturebeat.com/technology/googles-new-framework-helps-ai-agents-spend-their-compute-and-tool-budget"
@@ -70,6 +72,7 @@ const publications = [
     paperLink: "https://arxiv.org/abs/2509.25140",
     codeLink: "https://github.com/google-research/reasoning-bank",
     image: "paper_images/rb.png",
+    featured: true,
     tags: ["llm"],
     description: "ReasoningBank is a memory framework that enables LLM agents to learn from accumulated experience by distilling generalizable reasoning strategies from both successful and failed interactions. Rather than storing raw trajectories, it allows agents to self-curate insights for future tasks. The framework introduces Memory-Aware Test-Time Scaling (MaTTS), which creates synergy between memory and scaling—relevant memories guide exploration while scaling generates diverse experiences that improve memory quality.",
     ventureBeatLink: "https://venturebeat.com/ai/new-memory-framework-builds-ai-agents-that-can-handle-the-real-worlds"
@@ -109,6 +112,7 @@ const publications = [
     },
     paperLink: "https://arxiv.org/abs/2507.06261",
     image: "paper_images/gemini_2_5_pareto.png",
+    featured: true,
     tags: ["llm"],
     description: "The Gemini 2.5 model generation spans the full Pareto frontier of model capability vs cost, allowing users to explore the boundaries of what is possible with complex agentic problem solving."
   },
@@ -137,6 +141,7 @@ const publications = [
     paperLink: "https://arxiv.org/abs/2410.11163",
     codeLink: "https://github.com/google-research/google-research/tree/master/model_swarm",
     image: "paper_images/modelswarms.png",
+    featured: true,
     tags: ["llm"],
     description: "We propose Model Swarms, a collaborative search algorithm to adapt LLMs via swarm intelligence, the collective behavior guiding individual systems. Specifically, Model Swarms starts with a pool of LLM experts and a utility function. Guided by the best-found checkpoints across models, diverse LLM experts collaboratively move in the weight space and optimize a utility function representing model adaptation objectives."
   },
@@ -203,6 +208,7 @@ const publications = [
     },
     paperLink: "https://arxiv.org/abs/2407.08223",
     image: "paper_images/speculativeRAG.png",
+    featured: true,
     tags: ["llm"],
     description: "Speculative RAG is a framework that leverages a larger generalist LM to efficiently verify multiple RAG drafts produced in parallel by a smaller, distilled specialist LM. (A complementary strategy to the CaLM paper below from a very different perspective!)",
     blogLink: "https://research.google/blog/speculative-rag-enhancing-retrieval-augmented-generation-through-drafting/"
@@ -257,6 +263,7 @@ const publications = [
     },
     paperLink: "https://arxiv.org/abs/2404.05875",
     image: "paper_images/codeclm.png",
+    featured: true,
     tags: ["llm"],
     description: "CodecLM is a general framework for adaptively generating high-quality synthetic data for LLM alignment with different downstream instruction distributions and LLMs. Drawing on the Encode-Decode principles, we use LLMs as codecs to guide the data generation process.",
     blogLink: "https://research.google/blog/codeclm-aligning-language-models-with-tailored-synthetic-data/"
@@ -340,6 +347,7 @@ const publications = [
     },
     paperLink: "https://arxiv.org/abs/2112.08654",
     image: "paper_images/l2p.png",
+    featured: true,
     tags: ["cl"],
     description: "We propose a new learning paradigm for continual learning: our method learns to dynamically prompt (L2P) a pre-trained model to learn tasks sequentially under different task transitions.",
     codeLink: "https://github.com/google-research/l2p",
@@ -409,7 +417,7 @@ function createPublicationHTML(pub) {
   }
   
   return `
-    <tr data-tags="${pub.tags.join(' ')}">
+    <tr data-tags="${[...pub.tags, ...(pub.featured ? ['featured'] : [])].join(' ')}">
       <td width="32%">
         <img class="thumbnail" src="${pub.image}" data-id="${carouselId}"></img>
       </td>
@@ -494,28 +502,44 @@ function renderPublications() {
 function filterPublications(tag) {
   const rows = document.querySelectorAll('#publications-container tr');
   rows.forEach(row => {
-    if (tag === 'all' || row.dataset.tags.includes(tag)) {
+    if (tag === 'all' || row.dataset.tags.split(' ').includes(tag)) {
       row.style.display = '';
     } else {
       row.style.display = 'none';
     }
   });
+
+  // Update active button state
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tag === tag);
+  });
+
+  // Offer the full list below the featured papers
+  const showAllRow = document.getElementById('show-all-row');
+  if (showAllRow) {
+    showAllRow.style.display = tag === 'featured' ? '' : 'none';
+  }
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   renderPublications();
-  
+
   // Set up click handlers for filter buttons
   document.querySelectorAll('button[data-tag]').forEach(button => {
     button.addEventListener('click', () => {
-      const tag = button.dataset.tag;
-      filterPublications(tag);
-      
-      // Update active button state
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn === button);
-      });
+      filterPublications(button.dataset.tag);
     });
   });
-}); 
+
+  const showAllBtn = document.getElementById('show-all-btn');
+  if (showAllBtn) {
+    showAllBtn.textContent = `Show all ${publications.length} papers`;
+    showAllBtn.addEventListener('click', () => {
+      filterPublications('all');
+      document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  filterPublications('featured');
+});
