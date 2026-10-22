@@ -43,6 +43,7 @@ const publications = [
     },
     paperLink: "https://arxiv.org/abs/2605.06614",
     image: "paper_images/skillos.png",
+    featured: true,
     tags: ["llm"],
     description: "SkillOS is an experience-driven RL recipe for learning skill curation in self-evolving agents. A frozen executor retrieves and applies skills, while a trainable skill curator updates an external SkillRepo from accumulated experience, trained with composite rewards on grouped task streams where later related tasks evaluate earlier skill updates. SkillOS outperforms memory-free and memory-based baselines on multi-turn agentic and single-turn reasoning tasks, and the learned curator generalizes across executor backbones and task domains."
   },
