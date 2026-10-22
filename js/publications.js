@@ -523,7 +523,7 @@ function filterPublications(tag) {
   const moreBtn = document.getElementById('more-papers-btn');
   if (moreRow && moreBtn) {
     moreRow.style.display = (tag === 'featured' || tag === 'all') ? '' : 'none';
-    moreBtn.textContent = tag === 'all' ? 'Show fewer papers' : 'More papers';
+    moreBtn.textContent = tag === 'all' ? 'Featured Papers' : 'More Papers';
   }
 }
 
@@ -541,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const moreBtn = document.getElementById('more-papers-btn');
   if (moreBtn) {
     moreBtn.addEventListener('click', () => {
-      const expanded = moreBtn.textContent === 'Show fewer papers';
+      const expanded = moreBtn.textContent === 'Featured Papers';
       filterPublications(expanded ? 'featured' : 'all');
       if (expanded) {
         document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
