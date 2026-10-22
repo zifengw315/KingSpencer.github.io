@@ -29,6 +29,7 @@ const publications = [
     codeLink: "https://github.com/google-research/rrsi",
     websiteLink: "https://regularized-rsi.com/",
     image: "paper_images/rrsi.png",
+    featured: true,
     tags: ["llm"],
     description: "RRSI brings regularization to the recursive self-improvement of agent harnesses (prompts, control flow, tools, memory, and context management), which otherwise tends to overfit to the tasks it evolves against. The proposer works under a temporally annealed edit budget and is steered toward unexplored trajectories, while the selector uses a critic to screen benchmark-specific proposals and a pruner to drop changes that are too small, too costly, or no longer useful. Across eight benchmarks spanning coding, agentic workspace, and engineering design tasks, RRSI gains up to 14.1 points in-distribution and up to 4.7 points on five out-of-distribution benchmarks, with 30% fewer policy tokens than unregularized evolution."
   },
@@ -127,6 +128,7 @@ const publications = [
     paperLink: "https://arxiv.org/abs/2502.04510",
     codeLink: "https://github.com/BunsenFeng/heterogeneous_swarm",
     image: "paper_images/heterogeneous_swarms.png",
+    featured: true,
     tags: ["llm"],
     description: "We propose Heterogeneous Swarms, an algorithm to design multi-LLM systems by jointly optimizing model roles (i.e., multi-LLM workflow / topology) and model weights. Heterogeneous Swarms discovers multi-LLM systems with heterogeneous model roles and substantial collaborative gains, and benefits from the diversity of language models."
   },
@@ -333,6 +335,7 @@ const publications = [
     },
     paperLink: "https://arxiv.org/abs/2204.04799",
     image: "paper_images/dualprompt.png",
+    featured: true,
     tags: ["cl"],
     description: "DualPrompt presents a novel approach to attach complementary prompts to the pre-trained backbone, and then formulates the continual learning objective as learning task-invariant and task-specific 'instructions'.",
     codeLink: "https://github.com/google-research/l2p"
