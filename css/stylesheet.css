@@ -329,19 +329,6 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
 }
 
-.show-all-btn {
-  padding: 6px 16px;
-  border: 1.5px solid #007bff;
-  border-radius: 16px;
-  background: white;
-  color: #007bff;
-  font-size: 0.9em;
-  font-weight: 500;
-}
-.show-all-btn:hover {
-  background: #007bff;
-  color: white;
-}
 .scholar-link {
   font-size: 0.85em;
   margin: 0 0 0 auto;

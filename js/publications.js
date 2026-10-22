@@ -517,12 +517,6 @@ function filterPublications(tag) {
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.tag === tag);
   });
-
-  // Offer the full list below the featured papers
-  const showAllRow = document.getElementById('show-all-row');
-  if (showAllRow) {
-    showAllRow.style.display = tag === 'featured' ? '' : 'none';
-  }
 }
 
 // Initialize when DOM is loaded
@@ -535,15 +529,6 @@ document.addEventListener('DOMContentLoaded', () => {
       filterPublications(button.dataset.tag);
     });
   });
-
-  const showAllBtn = document.getElementById('show-all-btn');
-  if (showAllBtn) {
-    showAllBtn.textContent = `Show all ${publications.length} papers`;
-    showAllBtn.addEventListener('click', () => {
-      filterPublications('all');
-      document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
-    });
-  }
 
   filterPublications('featured');
 });
