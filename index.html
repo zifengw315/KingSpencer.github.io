@@ -160,7 +160,6 @@
                   <div class="filter-label">Filter:</div>
                   <div class="filter-buttons">
                     <button data-tag="featured" class="filter-btn active">Featured</button>
-                    <button data-tag="all" class="filter-btn">All Papers</button>
                     <button data-tag="llm" class="filter-btn">LLM</button>
                     <button data-tag="cl" class="filter-btn">Continual Learning</button>
                 </div>
@@ -172,6 +171,13 @@
             </tr>
             <tbody id="publications-container">
               <!-- Publications will be rendered here by JavaScript -->
+            </tbody>
+            <tbody>
+              <tr id="more-papers-row">
+                <td colspan="2" style="text-align:center">
+                  <button id="more-papers-btn" class="more-papers-btn">More papers</button>
+                </td>
+              </tr>
             </tbody>
           </table>
 
